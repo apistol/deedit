@@ -1,6 +1,7 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
 import { User } from "./entity/User"
+import { Product } from "./entity/Product"
 
  const username = encodeURIComponent("apistol5395");
  const password = encodeURIComponent("Ff5395!!");
@@ -13,10 +14,10 @@ import { User } from "./entity/User"
  export const AppDataSource = new DataSource({
     type: "mongodb",
      url: uri, // Use the Atlas connection string
-    database: "products",
+    database: "deedit",
     synchronize: false,
     logging: false,
-    entities: [User],
+    entities: [User, Product],
     migrations: [],
     subscribers: [],
 })
