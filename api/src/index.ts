@@ -18,7 +18,10 @@ app.use(cookieParser())
 app.get( "/" , (_, res) => res.send("Hello"))
 app.use("/api/auth", authRoutes)
 
-app.listen(5001, async () => {
+const portDev = 5001
+const port = process.env.PORT || portDev;
+
+app.listen(port, async () => {
     console.log('Server running at 5001')
     try {
         await AppDataSource.initialize();
