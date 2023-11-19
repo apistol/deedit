@@ -1,16 +1,19 @@
- import "reflect-metadata"
+import "reflect-metadata"
 import { DataSource } from "typeorm"
 import { User } from "./entity/User"
 
-
- const password = encodeURIComponent("OscarDiego"); // Replace with your actual password
- const username = encodeURIComponent('apistol5395'); // Replace with your actual password
+ const username = encodeURIComponent("apistol5395");
+ const password = encodeURIComponent("Ff5395!!");
  const cluster = "cluster0.iewtgka.mongodb.net";
+
+ let uri = `mongodb+srv://${username}:${password}@${cluster}/?retryWrites=true&w=majority`;
+
+
 
  export const AppDataSource = new DataSource({
     type: "mongodb",
-    // host: `mongodb+srv://${username}:${password}@${cluster}/?retryWrites=true&w=majority`,
-    host: "localhost",
+     url: uri, // Use the Atlas connection string
+    database: "products",
     synchronize: false,
     logging: false,
     entities: [User],
