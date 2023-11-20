@@ -1,8 +1,15 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# deploy
 
-# Getting Started
+>**Note**:
+>
+Build on ios
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+cd ./ios
+pod install
+
+Run project on io
+
+yarn yos ./native
 
 ## Step 1: Start the Metro Server
 
