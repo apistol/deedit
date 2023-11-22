@@ -1,0 +1,26 @@
+runtime: nodejs16  # Ensure this version is supported by App Engine Standard.
+instance_class: F1  # This is the default and is fine for small applications.
+
+env_variables:
+  NODE_ENV: 'production'
+  # Define other environment variables here, if needed
+  MONGO_URL: 'mongodb+srv://apistol5395:Ff5395!!@cluster0.iewtgka.mongodb.net/'
+
+automatic_scaling:
+  min_instances: 0
+  max_instances: 5
+  # target_cpu_utilization and cool_down_period_sec should be removed for standard environment
+  # The following settings are based on latency and request queueing:
+  min_pending_latency: 30ms  # Minimum amount of time a request should wait in the queue.
+  max_pending_latency: 60ms  # Maximum amount of time a request is allowed to wait in the queue.
+
+handlers:
+  - url: /.*
+    script: auto
+    secure: always
+
+# VPC connector settings are usually used with the flexible environment and are not needed for standard environment.
+# If you need to use VPC connectors, consider switching to the flexible environment and uncomment the following lines:
+# env: flex
+# vpc_access_connector:
+#   name: "projects/YOUR_PROJECT_ID/locations/YOUR_REGION/connectors/YOUR_CONNECTOR_NAME"
