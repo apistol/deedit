@@ -7,13 +7,12 @@ import querystring from 'querystring';
 // Ensure to use the correct password with special characters here
 // const encodedPassword = querystring.escape("OscarDiego");
 // const encodedUser = querystring.escape("apistol5395");
-// const url = `mongodb+srv://apistol5395:OscarDiego@cluster0.iewtgka.mongodb.net/deedit`;
+const url = `mongodb+srv://apistol5395:OscarDiego@cluster0.iewtgka.mongodb.net/deedit`;
 
-// console.log("url: " + url )
-
-console.log("CV: ")
+console.log("url: " + url )
 @Module({
     imports:[
+        MongooseModule.forRoot(url),
         TaskModule
     ]
 })

@@ -5,16 +5,18 @@ import { Task, TaskDocument } from './task.schema';
 
 @Injectable()
 export class TaskService {
-    // constructor(@InjectModel(Task.name) private taskModel: Model<TaskDocument>) {}
+    constructor(@InjectModel(Task.name) private taskModel: Model<TaskDocument>) {}
 
-    async createTask(createTaskDto: any): Promise<any> {
-        // TODO save to BE
-        return new Task(createTaskDto);
+    async createTask(createTaskDto: any): Promise<Task> {
+        const createdTask = new Task(createTaskDto);
+        this.taskModel.create(createdTask);
+        console.log("Task created:" + JSON.stringify(createdTask))
+        return createdTask;
     }
 
-    // async findAllTasks(): Promise<Task[]> {
-    //     return this.taskModel.find().exec();
-    // }
+    async findAllTasks(): Promise<Task[]> {
+        return this.taskModel.find().exec();
+    }
 
     // Add other necessary methods like updateTask, deleteTask, etc.
 }

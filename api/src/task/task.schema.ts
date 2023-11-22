@@ -19,7 +19,7 @@ export class Task {
     description: string;
 
     @Prop({ default: false })
-    isCompleted: boolean;
+    isCompleted: string;
 }
 
 export const TaskSchema = SchemaFactory.createForClass(Task);
