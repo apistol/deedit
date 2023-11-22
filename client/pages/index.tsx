@@ -8,6 +8,8 @@ import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 import Post from '../interfaces/post'
 import "../styles/Home.module.css"
+import {useEffect} from "react";
+import axios from "axios";
 
 type Props = {
   allPosts: Post[]
@@ -16,6 +18,18 @@ type Props = {
 export default function Index({ allPosts }: Props) {
   const heroPost = allPosts[0]
   const morePosts = allPosts.slice(1)
+
+  useEffect(() => {
+    axios.post("https://nestjs-api.fly.dev/auth/signin", {
+      username:"12345",
+      email:"12345",
+      password:"12345",
+    }).then((data) => {
+      return console.log(data)
+    }).catch((err) => {
+      return console.log(err)
+    })
+  }, [])
   return (
     <>
       <Layout>
