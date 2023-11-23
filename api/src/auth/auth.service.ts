@@ -41,7 +41,7 @@ export class AuthService {
     // For example, check the password, create JWT token, etc.
 
     // Convert UserDto to User instance (assuming they have similar properties)
-    const user = new this.userModel(userDto);
+    const user = new this.userModel(userDto).save();
 
     console.log('User signed in: ' + JSON.stringify(userDto));
     return user; // Return the User instance, not userDto

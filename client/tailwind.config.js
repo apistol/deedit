@@ -2,6 +2,9 @@
 module.exports = {
   content: ['./components/**/*.tsx', './pages/**/*.tsx'],
   theme: {
+    fontFamily:{
+      body:['Roboto']
+    },
     extend: {
       colors: {
         'accent-1': '#FAFAFA',
