@@ -1,15 +1,15 @@
-# deploy
+# Deploy
 
->**Note**:
+> **Note**:
 >
-Build on ios
+> Build on ios
 
 cd ./ios
 pod install
 
-Run project on io
+Run project on ios
 
-yarn yos ./native
+yarn ios ./native
 
 ## Step 1: Start the Metro Server
 
