@@ -16,6 +16,9 @@ module.exports = {
       spacing: {
         28: '7rem',
       },
+      container: {
+        center:false
+      },
       letterSpacing: {
         tighter: '-.04em',
       },

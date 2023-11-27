@@ -4,7 +4,7 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    origin: ['http://localhost:3001', 'http://example.com', 'https://anotherdomain.com'],
+    origin: ['http://localhost:3001', 'https://deedit-xi.vercel.app/'],
     credentials: true
 
   }); // Enables CORS for all origins

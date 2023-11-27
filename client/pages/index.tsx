@@ -20,10 +20,13 @@ export default function Index({ allPosts }: Props) {
         <Head>
           <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
         </Head>
-        <Container>
-          Landing
+        <div className={"container pr-4 flex"}>
+          {/* Posts feed */}
+          <div className="w-160">
 
-        </Container>
+          </div>
+
+        </div>
       </Layout>
     </>
   )
