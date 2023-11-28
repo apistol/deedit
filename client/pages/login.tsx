@@ -4,34 +4,33 @@ import { FormEvent, useState } from 'react'
 import { useRouter } from 'next/router'
 import InputGroup from '../components/InputGroup'
 import Axios from "axios";
+import { useAuthDispatch, useAuthState } from '../context/auth'
 
 
 export default function Login() {
-
-    const [email, setEmail] = useState('')
+    const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [agreement, setAgreement] = useState(false)
     const [errors, setErrors] = useState<any>({})
 
-    const router = useRouter()
+    const dispatch = useAuthDispatch()
+    const { authenticated } = useAuthState()
 
+    const router = useRouter()
+    if (authenticated) router.push('/')
     const submitForm = async (event: FormEvent) => {
         event.preventDefault()
 
-        if (!agreement) {
-            setErrors({ ...errors, agreement: 'You must agree to T&Cs' })
-            return
-        }
-
         try {
-            await Axios.post('/auth/signin', {
-                email,
+            const res = await Axios.post('/auth/login', {
+                username,
                 password,
             })
 
-            return router.push('/')
+            dispatch('LOGIN', res.data)
+
+            router.push('/')
         } catch (err) {
-            setErrors(err)
+            setErrors(err.response.data)
         }
     }
 

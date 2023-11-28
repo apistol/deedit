@@ -12,9 +12,13 @@ export class PostController {
         return this.postService.createPost(createPostDto);
     }
 
+
     @Get()
     async getPosts() {
-        return this.postService.getPosts();
+        // TODO add middleware for auth
+        const user = null
+
+        return this.postService.getPosts(user);
     }
 
     @Get("/:id")

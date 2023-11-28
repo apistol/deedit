@@ -1,11 +1,11 @@
 import Loader from './loader'
 import Footer from './footer'
 import Meta from './meta'
-import Navbar from "./Navbar";
+import Navbar from "./navbar";
 
 type Props = {
   preview?: boolean
-  children: React.ReactNode
+  children: React.ReactNode,
 }
 
 const Layout = ({ preview, children }: Props) => {

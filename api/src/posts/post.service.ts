@@ -40,10 +40,14 @@ export class PostService {
     }
   }
 
-  async getPosts(): Promise<Post[]> {
+  async getPosts(user): Promise<Post[]> {
     try {
+      //  TODO get user from auth middleware user
+      const userData = user;
+
       const postRecord = await this.postModel.find().exec();
 
+      //  TODO get user votes and verify if any postRecord includes it or not, then set key "userVote": -1 | 0 | 1
       console.log('Posts returned:' + JSON.stringify(postRecord));
       return postRecord;
     } catch (e) {
