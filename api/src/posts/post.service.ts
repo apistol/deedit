@@ -4,6 +4,7 @@ import { Model } from 'mongoose';
 import { Post, PostDocument } from './post.schema';
 import { Sub, SubDocument } from './subs/sub.schema';
 import { Comment, CommentDocument} from "./comments/comment.schema";
+import {Vote, VoteDocument} from "./votes/vote.schema";
 
 @Injectable()
 export class PostService {
@@ -11,6 +12,7 @@ export class PostService {
     @InjectModel(Post.name) private postModel: Model<PostDocument>,
     @InjectModel(Sub.name) private subModel: Model<SubDocument>,
     @InjectModel(Comment.name) private commentModel: Model<CommentDocument>,
+    @InjectModel(Vote.name) private voteModel: Model<VoteDocument>,
   ) {}
 
   async createPost(createPostDto: any): Promise<Post> {
