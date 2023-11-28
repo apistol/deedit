@@ -11,7 +11,7 @@ nx serve api
 nx serve webapp
 nx start rnapp
 nx run-android rnapp
-
+nx serve client
 # Chronological build
 
 npm install -g nx

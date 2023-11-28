@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "data-access": ["data-access/src/index.ts"],
-      "shared-types": ["shared-types/src/index.ts"]
+      "shared-types": ["shared-types/src/index.ts"],
+      "shared-ui": ["shared-ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

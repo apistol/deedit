@@ -111,3 +111,6 @@ yarn-error.log
 
 
 rnapp-e2e/artifacts
+
+# Next.js
+.next

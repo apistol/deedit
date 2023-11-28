@@ -14,6 +14,8 @@ import { Colors } from 'react-native/Libraries/NewAppScreen'
 
 import { useTodos } from 'data-access'
 
+import SharedUI from 'shared-ui/src/lib/shared-ui';
+
 const App = () => {
   const { todos, getTodos } = useTodos()
 
@@ -22,6 +24,8 @@ const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
+
+      <SharedUI/>
       <SafeAreaView>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
