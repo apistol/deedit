@@ -6,9 +6,7 @@ import { useAuthState, useAuthDispatch } from '../../context/auth'
 import deeditLogo from "../../public/assets/deedit.png"
 
 
-interface NavbarProps {
-}
-const Navbar: NavbarProps = () => {
+const Navbar: React.FC = () => {
     const { authenticated, loading } = useAuthState()
     const dispatch = useAuthDispatch()
 

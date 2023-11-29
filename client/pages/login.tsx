@@ -11,6 +11,7 @@ export default function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [errors, setErrors] = useState<any>({})
+    const [email, setEmail] = useState("")
 
     const dispatch = useAuthDispatch()
     const { authenticated } = useAuthState()
@@ -51,21 +52,7 @@ export default function Login() {
                         By continuing, you agree to our User Agreement and Privacy Policy
                     </p>
                     <form onSubmit={submitForm}>
-                        <div className="mb-6">
-                            <input
-                                type="checkbox"
-                                className="mr-1 cursor-pointer"
-                                id="agreement"
-                                checked={agreement}
-                                onChange={(e:any) => setAgreement(e.target?.checked)}
-                            />
-                            <label htmlFor="agreement" className="text-xs cursor-pointer">
-                                I agree to get emails about cool stuff on Readit
-                            </label>
-                            <small className="block font-medium text-red-600">
-                                {errors.agreement}
-                            </small>
-                        </div>
+
                         <InputGroup
                             className="mb-2"
                             type="email"
