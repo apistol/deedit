@@ -8,12 +8,12 @@ type Props = {
   children: React.ReactNode,
 }
 
+
 const Layout = ({ preview, children }: Props) => {
   return (
     <>
       <Meta />
-      <div className="min-h-screen p-20">
-        <Navbar/>
+      <div className="min-h-screen">
         {/*<Loader preview={preview} />*/}
         <main>{children}</main>
       </div>

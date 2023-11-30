@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <div className="pt-12">
+      <div className="p-20 bg-redMain min-h-screen">
         <Head>
           <title>readit: the front page of the internet</title>
         </Head>

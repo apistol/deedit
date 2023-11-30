@@ -10,4 +10,6 @@ async function bootstrap() {
   }); // Enables CORS for all origins
   await app.listen(3000);
 }
+
+
 export default bootstrap();
