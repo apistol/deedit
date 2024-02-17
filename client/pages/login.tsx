@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { FormEvent, useState } from 'react'
-import { useRouter } from 'next/router'
 import InputGroup from '../components/InputGroup'
 import Axios from "axios";
 import { useAuthDispatch, useAuthState } from '../context/auth'
+import useChangeRoute from "../hooks/useChangeRoute";
 
 
 export default function Login() {
@@ -16,8 +16,10 @@ export default function Login() {
     const dispatch = useAuthDispatch()
     const { authenticated } = useAuthState()
 
-    const router = useRouter()
-    if (authenticated) router.push('/')
+    const [changeRoute] = useChangeRoute()
+    if (typeof window === "undefined") return;
+
+    if (authenticated) changeRoute('Acasa')
     const submitForm = async (event: FormEvent) => {
         event.preventDefault()
 
@@ -29,7 +31,7 @@ export default function Login() {
 
             dispatch('LOGIN', res.data)
 
-            router.push('/')
+            changeRoute('Acasa')
         } catch (err) {
             setErrors(err.response.data)
         }

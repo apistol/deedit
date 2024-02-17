@@ -7,7 +7,15 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "target": "ES2021",
-    "lib": ["ES5", "DOM", "ES2015", "ES2016", "ES2017", "ES2021","ESNext"],
+    "lib": [
+      "ES5",
+      "DOM",
+      "ES2015",
+      "ES2016",
+      "ES2017",
+      "ES2021",
+      "ESNext"
+    ],
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
@@ -17,6 +25,14 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@app/common": [
+        "libs/common/src"
+      ],
+      "@app/common/*": [
+        "libs/common/src/*"
+      ]
+    }
   }
 }

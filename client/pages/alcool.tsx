@@ -22,7 +22,7 @@ export default function Alcool() {
 
     return (
         <Layout>
-            <div className="pt-12">
+            <div  className="p-20 pt-40 min-h-screen">
                 <Head>
                     <title>readit: the front page of the internet</title>
                 </Head>

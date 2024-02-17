@@ -8,6 +8,7 @@ import { Post } from "../types";
 
 import PostCard from "../components/PostCard";
 import Layout from "../components/layout/layout";
+import BannerComponent from "../components/BannerComponent";
 
 dayjs.extend(relativeTime);
 
@@ -22,18 +23,28 @@ export default function Home() {
 
   return (
     <Layout>
-      <div className="p-20 bg-redMain min-h-screen">
+      <div className="p-20 pt-40 min-h-screen bg-redMain">
         <Head>
           <title>readit: the front page of the internet</title>
         </Head>
+
+        <BannerComponent title={"povesti&"} subTitle={"secrete"} containerClass={""} subClass={"text-sex2"} titleClass={"text-sex1"} />
+
+
+
         <div className="container flex pt-4">
+          {/* Sidebar */}
+          <div className="w-1/3">
+            { [{id:1}].map( add => add.id)}
+          </div>
+
           {/* Posts feed */}
-          <div className="w-160">
+          <div className="w-2/3">
             {posts.map((post) => (
               <PostCard post={post} key={post.identifier} />
             ))}
           </div>
-          {/* Sidebar */}
+
         </div>
       </div>
     </Layout>

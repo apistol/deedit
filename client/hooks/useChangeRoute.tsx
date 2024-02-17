@@ -23,7 +23,7 @@ const useChangeRoute = () => {
         }
     }, [router]);
 
-    return changeRoute;
+    return [changeRoute];
 };
 
 export default useChangeRoute;

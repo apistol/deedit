@@ -52,9 +52,9 @@ export default function PostCard({
     }
 
     return (
-        <div key={identifier} className="flex mb-4 bg-white rounded">
+        <div key={identifier} className="flex mb-4">
             {/* Vote section */}
-            <div className="w-10 py-3 text-center bg-gray-200 rounded-l flex flex-col justify-center align-items-center">
+            <div className="w-10 py-3 text-center flex flex-col justify-center align-items-center">
                 {/* Upvote */}
                 <div
                     className="w-6 mx-auto text-gray-400 rounded cursor-pointer hover:bg-gray-300 hover:text-red-500"
@@ -75,39 +75,43 @@ export default function PostCard({
                     })}/>
                 </div>
             </div>
+
+
+
             {/* Post data section */}
-            <div className="w-full p-2">
-                <div className="flex items-center">
-                    <Link href={`/r/${subName}`}>
-                        <Fragment>
-                            <img
-                                src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"
-                                className="w-6 h-6 mr-1 rounded-full cursor-pointer"
-                            />
-                            <span className="text-xs font-bold cursor-pointer hover:underline">
-                                /r/{subName}
-                            </span>
-                        </Fragment>
-                    </Link>
-                    <p className="text-xs text-gray-500">
-                        <span className="mx-1">•</span>
-                        Posted by
-                        <Link href={`/u/${username}`}>
-                            <span className="mx-1 hover:underline">/u/{username}</span>
-                        </Link>
-                        <Link href={`${url}`}>
-                            <span className="mx-1 hover:underline">
-                                {dayjs(createdAt).fromNow()}
-                            </span>
-                        </Link>
-                    </p>
-                </div>
+                    {/*<Link href={`/r/${subName}`}>*/}
+                    {/*    <Fragment>*/}
+                    {/*        <img*/}
+                    {/*            src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"*/}
+                    {/*            className="w-6 h-6 mr-1 rounded-full cursor-pointer"*/}
+                    {/*        />*/}
+                    {/*        <span className="text-xs font-bold cursor-pointer hover:underline">*/}
+                    {/*            /r/{subName}*/}
+                    {/*        </span>*/}
+                    {/*    </Fragment>*/}
+                    {/*</Link>*/}
+                    {/*<p className="text-xs text-gray-500">*/}
+                    {/*    <span className="mx-1">•</span>*/}
+                    {/*    Posted by*/}
+                    {/*    <Link href={`/u/${username}`}>*/}
+                    {/*        <span className="mx-1 hover:underline">/u/{username}</span>*/}
+                    {/*    </Link>*/}
+                    {/*    <Link href={`${url}`}>*/}
+                    {/*        <span className="mx-1 hover:underline">*/}
+                    {/*            {dayjs(createdAt).fromNow()}*/}
+                    {/*        </span>*/}
+                    {/*    </Link>*/}
+                    {/*</p>*/}
+
+
                 <Link href={`${url}`}>
                     <span className="my-1 text-lg font-medium">{title}</span>
                 </Link>
+
+
                 {body && <p className="my-1 text-sm">{body}</p>}
 
-                <div className="flex">
+                <div className="flex flex-col">
                     <Link href={`${url}`}>
                         <span>
                             <ActionButton>
@@ -126,6 +130,5 @@ export default function PostCard({
                     </ActionButton>
                 </div>
             </div>
-        </div>
     )
 }

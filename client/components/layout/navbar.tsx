@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
   const { authenticated, loading } = useAuthState();
   const dispatch = useAuthDispatch();
   const menu = useCurrentMenuOption();
-  const changeRoute = useChangeRoute()
+  const [changeRoute] = useChangeRoute()
 
   const logout = () => {
     Axios.get("/auth/logout")
@@ -25,9 +25,12 @@ const Navbar: React.FC = () => {
 
   return (
     <div>
-      <div className="fixed inset-x-0 top-0 z-10 flex items-center justify-between h-12 px-5">
-        {/* Logo and title */}
-        <div className="flex items-center">
+      <div className="fixed inset-x-0 top-0 z-10 flex justify-between h-12 px-5 h-200">
+
+
+
+          {/* Logo and title */}
+        <div className="flex">
           {/*<Link href="/">*/}
           {/*  <span>*/}
           {/*    /!* TODO correctly import this image *!/*/}
@@ -38,17 +41,18 @@ const Navbar: React.FC = () => {
             <Link href="/">DeedIt</Link>
           </span>
         </div>
-        {/* Serach Input */}
-        {/*<div className="flex items-center mx-auto bg-gray-100 border rounded hover:border-blue-500 hover:bg-white">*/}
-        {/*  <i className="pl-4 pr-3 text-gray-500 fas fa-search "></i>*/}
-        {/*  <input*/}
-        {/*    type="text"*/}
-        {/*    className="py-1 pr-3 bg-transparent rounded w-160 focus:outline-none"*/}
-        {/*    placeholder="Search"*/}
-        {/*  />*/}
-        {/*</div>*/}
+
+          <div className="flex justify-center fixed w-screen pt-20">
+              <div className="menu bg-white p-1 rounded-2xl flex items-center">
+                  <div onClick={() => changeRoute("Acasa")} className={classNames("mx-3", {"bg-black rounded-2xl text-white px-3 p-1": menu === "Acasa" })}>Acasa</div>
+                  <div onClick={() => changeRoute("Sex")} className={classNames("mx-3", { "bg-black rounded-2xl text-white px-3 p-1" : menu === "Sex"})}>S</div>
+                  <div onClick={() => changeRoute("Alcool")} className={classNames("mx-3", { "bg-black rounded-2xl text-white px-3 p-1" : menu === "Alcool"})}>A</div>
+                  <div onClick={() => changeRoute("Droguri")} className={classNames("mx-3", { "bg-black rounded-2xl text-white px-3 p-1" : menu === "Droguri"})}>D</div>
+              </div>
+          </div>
+
         {/* Auth buttons */}
-        <div className="flex">
+        <div className="flex items-baseline">
           {!loading &&
             (authenticated ? (
               // Show logout
@@ -75,14 +79,7 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex justify-center fixed w-screen pt-20">
-        <div className="menu bg-white p-1 rounded-2xl flex items-center">
-          <div onClick={() => changeRoute("/Acasa")} className={classNames("bg-black mx-3 p-1 px-3 rounded-2xl text-white", {"bg-black ": menu === "Acasa" })}>Acasa</div>
-          <div onClick={() => changeRoute("/Sex")} className={classNames("mx-3", { "bg-black" : menu === "Sex"})}>Sex</div>)
-          <div onClick={() => changeRoute("/Alcool")} className={classNames("mx-3", { "bg-black" : menu === "Alcool"})}>Alcool</div>)
-          <div onClick={() => changeRoute("/Droguri")} className={classNames("mx-3", { "bg-black" : menu === "Droguri"})}>Droguri</div>)
-        </div>
-      </div>
+
     </div>
   );
 };
