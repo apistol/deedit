@@ -1,0 +1,11 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html {
+  font-family: var(--font-inter);
+}
+
+body {
+  font-family: var(--font-poppins);
+}

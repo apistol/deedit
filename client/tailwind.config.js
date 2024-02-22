@@ -1,9 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./components/**/*.tsx', './pages/**/*.tsx'],
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
   theme: {
-    fontFamily:{
-      body:['Roboto']
+    fontFamily: {
+      body: ['Roboto'],
     },
     extend: {
       colors: {
@@ -13,21 +17,25 @@ module.exports = {
         success: '#0070f3',
         cyan: '#79FFE1',
 
-        redMain: "#BF2E2E",
-        redTitle:"#FFEBC5",
-        redSubTitle:"#FF8DD5",
-        yellowMain: "#000000",
-        yellowTitle:"#FFFFFF",
-        yellowSubTitle:"#FDFF8D",
-        greenMain: "#000000",
-        greenTitle:"#FFFFFF",
-        greenSubTitle:"#00B71D"
+        redMain: '#BF2E2E',
+        redTitle: '#FFEBC5',
+        redSubTitle: '#FF8DD5',
+        yellowMain: '#000000',
+        yellowTitle: '#FFFFFF',
+        yellowSubTitle: '#FDFF8D',
+        greenMain: '#000000',
+        greenTitle: '#FFFFFF',
+        greenSubTitle: '#00B71D',
+      },
+      backgroundImage: {
+        'beautiful-gradient':
+          'linear-gradient(135deg, #BF00A9 0%, #BF2E2E 50%, #FF711D 100%)',
       },
       spacing: {
         28: '7rem',
       },
       container: {
-        center:false
+        center: false,
       },
       letterSpacing: {
         tighter: '-.04em',
@@ -48,4 +56,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};
