@@ -3,17 +3,18 @@ import Head from 'next/head';
 import Link from 'next/link';
 import * as Yup from 'yup';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { signUpRegister } from '../utils/utils';
 
 interface FormDataRegister {
-  username: string;
+  name: string;
   email: string;
   password: string;
-  confirmPassword: string;
-  termsAndPolicy: boolean;
 }
 
 const INITIAL_FORM_STATE = {
-  username: '',
+  name: '',
   email: '',
   password: '',
   confirmPassword: '',
@@ -21,7 +22,7 @@ const INITIAL_FORM_STATE = {
 };
 
 const FORM_VALIDATION = Yup.object().shape({
-  username: Yup.string().required('Required'),
+  name: Yup.string().required('Required'),
   email: Yup.string()
     .email('Invalid email.')
     .required('Required')
@@ -43,7 +44,27 @@ const FORM_VALIDATION = Yup.object().shape({
 });
 
 export default function Register() {
-  const onFormSubmit = (values) => {};
+  const [formData, setFormData] = useState<FormDataRegister | null>(null);
+  const [formCompleted, setFormCompleted] = useState(false);
+
+  useEffect(() => {
+    if (formCompleted && formData) {
+      const submitRegister = async () => {
+        const register = await signUpRegister(formData);
+        if (register) {
+          console.log('Register created successfully:', register);
+        } else {
+          console.log('Error creating register');
+        }
+      };
+      submitRegister();
+    }
+  }, [formCompleted, formData]);
+
+  const onFormSubmit = (values) => {
+    setFormData(values);
+    setFormCompleted(true);
+  };
 
   return (
     <div className="flex flex-row justify-center items-center min-h-screen">
@@ -67,17 +88,17 @@ export default function Register() {
           >
             <Form>
               <div className="py-4">
-                <label htmlFor="username" className="block font-semibold">
+                <label htmlFor="name" className="block font-semibold">
                   Username
                 </label>
                 <Field
-                  name="username"
+                  name="name"
                   placeholder="Please enter your username"
                   type="text"
                   className="mt-1 w-full border border-gray-300 rounded-md py-2 px-2 text-sm"
                 />
                 <ErrorMessage
-                  name="username"
+                  name="name"
                   component="div"
                   className="text-red-600"
                 />
