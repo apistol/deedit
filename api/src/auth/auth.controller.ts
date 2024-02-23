@@ -1,5 +1,6 @@
-import { Controller, Post, Body, Get } from '@nestjs/common'
+import { Controller, Post, Body, Res } from '@nestjs/common'
 import { LoginDto, SignUpDto } from './signin-user.dto'
+import { Response } from 'express'
 import { AuthService } from './auth.service'
 
 @Controller('auth')
@@ -7,12 +8,28 @@ export class AuthController {
   constructor(private authService: AuthService) {}
 
   @Post('signup')
-  signUp(@Body() signUpDto: SignUpDto): Promise<{ token: string }> {
-    return this.authService.signUp(signUpDto)
+  async signUp(@Body() signUpDto: SignUpDto, @Res() response: Response) {
+    const { token } = await this.authService.signUp(signUpDto)
+    response
+      .cookie('JWT_TOKEN', token, {
+        httpOnly: true,
+        secure: false, // Folosiți secure: false dacă testați local fără HTTPS
+        sameSite: 'strict',
+      })
+      .send({ success: true })
+    return { message: 'Inregistrare cu succes!' }
   }
 
-  @Get('/login')
-  login(@Body() loginDto: LoginDto): Promise<{ token: string }> {
-    return this.authService.login(loginDto)
+  @Post('login')
+  async login(@Body() loginDto: LoginDto, @Res() response: Response) {
+    const { token } = await this.authService.login(loginDto)
+    response
+      .cookie('JWT_TOKEN', token, {
+        httpOnly: true,
+        secure: false, // Folosiți secure: false dacă testați local fără HTTPS
+        sameSite: 'strict',
+      })
+      .send({ success: true })
+    return { message: 'Conectare cu succes!' }
   }
 }

@@ -2,7 +2,9 @@ import { Controller, Get, Post, Body, Param } from '@nestjs/common'
 import { PostService } from './post.service'
 import { CreatePostDto } from './create-post.dto'
 import { CreateCommentDto } from './comments/create-comment.dto'
+// import { JwtAuthGuard } from 'src/auth/jwt-auth.guard'
 
+// @UseGuards(JwtAuthGuard)
 @Controller('post')
 export class PostController {
   constructor(private readonly postService: PostService) {}
