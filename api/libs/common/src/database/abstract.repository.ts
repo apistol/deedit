@@ -47,8 +47,13 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
       return this.model.find(filterQuery).lean(true);
   }
 
+
+  
+  async findAll(): Promise<TDocument[]>{
+    return this.model.find().lean(true);
+  }
+
   async findOneAndDelete(filterQuery: FilterQuery<TDocument>): Promise<TDocument>{
       return this.model.findOneAndDelete(filterQuery).lean(true);
   }}
 
-// TBD vezi daca nu e o problema de unde e importat FilterQuery

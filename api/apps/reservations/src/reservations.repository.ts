@@ -16,3 +16,7 @@ export class ReservationsRepository extends AbstractRepository<ReservationDocume
     super(reservationModel);
   }
 }
+// can you find an issue with this code and the code from ./reservations.service.ts?
+// yes, the repository is not being used in the service
+// Path: api/apps/reservations/src/reservations.service.ts
+

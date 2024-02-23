@@ -5,7 +5,7 @@ import {AbstractDocument} from "@app/common/database/abstract.schema";
 export class ReservationDocument extends AbstractDocument{
 
     @Prop()
-    timestamo: Date;
+    timestamp: Date;
 
     @Prop()
     startDate: Date;
@@ -24,3 +24,4 @@ export class ReservationDocument extends AbstractDocument{
 }
 
 export const ReservationSchema = SchemaFactory.createForClass(ReservationDocument);
+ 
