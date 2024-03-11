@@ -1,21 +1,35 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
-import {UserDto} from "./signin-user.dto";
-import {AuthService} from "./auth.service";
+import { Controller, Post, Body, Res } from '@nestjs/common'
+import { LoginDto, SignUpDto } from './signin-user.dto'
+import { Response } from 'express'
+import { AuthService } from './auth.service'
 
 @Controller('auth')
 export class AuthController {
-    constructor(private readonly authService: AuthService) {}
+  constructor(private authService: AuthService) {}
 
-    @Post('/signin')
-    async signin(@Body() userDto: UserDto) {
+  @Post('signup')
+  async signUp(@Body() signUpDto: SignUpDto, @Res() response: Response) {
+    const { token } = await this.authService.signUp(signUpDto)
+    response
+      .cookie('JWT_TOKEN', token, {
+        httpOnly: true,
+        secure: false, // Folosiți secure: false dacă testați local fără HTTPS
+        sameSite: 'strict',
+      })
+      .send({ success: true })
+    return { message: 'Inregistrare cu succes!' }
+  }
 
-        return this.authService.signin(userDto)
-    }
-
-
-    @Post('/signup')
-    async signup(@Body() userDto: UserDto) {
-        return this.authService.signup(userDto)
-    }
-
+  @Post('login')
+  async login(@Body() loginDto: LoginDto, @Res() response: Response) {
+    const { token } = await this.authService.login(loginDto)
+    response
+      .cookie('JWT_TOKEN', token, {
+        httpOnly: true,
+        secure: false, // Folosiți secure: false dacă testați local fără HTTPS
+        sameSite: 'strict',
+      })
+      .send({ success: true })
+    return { message: 'Conectare cu succes!' }
+  }
 }

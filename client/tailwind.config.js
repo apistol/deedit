@@ -1,51 +1,78 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./components/**/*.tsx', './pages/**/*.tsx'],
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
-    fontFamily:{
-      body:['Roboto']
-    },
     extend: {
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        fadeOut: {
+          '0%': { opacity: '1' },
+          '100%': { opacity: '0' },
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.4s ease-out forwards',
+        fadeOut: 'fadeOut 0.7s ease-out forwards',
+      },
       colors: {
-        'accent-1': '#FAFAFA',
-        'accent-2': '#EAEAEA',
-        'accent-7': '#333',
-        success: '#0070f3',
-        cyan: '#79FFE1',
-
-        redMain: "#BF2E2E",
-        redTitle:"#FFEBC5",
-        redSubTitle:"#FF8DD5",
-        yellowMain: "#000000",
-        yellowTitle:"#FFFFFF",
-        yellowSubTitle:"#FDFF8D",
-        greenMain: "#000000",
-        greenTitle:"#FFFFFF",
-        greenSubTitle:"#00B71D"
+        black: '#000',
+        antiquewhite: {
+          100: '#ffebd9',
+          200: '#e6d1bf',
+        },
+        firebrick: '#c00c00',
+        white: '#fff',
+        lightcoral: '#ff8d8f',
+        blanchedalmond: '#ffebc5',
+        gray: 'rgba(255, 255, 255, 0.5)',
+        tomato: '#e63326',
       },
-      spacing: {
-        28: '7rem',
+      spacing: {},
+      fontFamily: {
+        inter: 'Inter',
       },
-      container: {
-        center:false
-      },
-      letterSpacing: {
-        tighter: '-.04em',
-      },
-      lineHeight: {
-        tight: 1.2,
-      },
-      fontSize: {
-        '5xl': '2.5rem',
-        '6xl': '2.75rem',
-        '7xl': '4.5rem',
-        '8xl': '6.25rem',
-      },
-      boxShadow: {
-        sm: '0 5px 10px rgba(0, 0, 0, 0.12)',
-        md: '0 8px 30px rgba(0, 0, 0, 0.12)',
+      borderRadius: {
+        '29xl': '48px',
+        '61xl': '80px',
       },
     },
+    fontSize: {
+      xl: '20px',
+      base: '16px',
+      '11xl': '30px',
+      '5xl': '24px',
+      lg: '18px',
+      '46xl': '65px',
+      '33xl': '52px',
+      '20xl': '39px',
+      lgi: '19px',
+      '208xl': '227px',
+      '72xl': '91px',
+      '38xl': '57px',
+      inherit: 'inherit',
+    },
+    // screens: {
+    //   mq975: {
+    //     raw: 'screen and (max-width: 975px)',
+    //   },
+    //   mq950: {
+    //     raw: 'screen and (max-width: 950px)',
+    //   },
+    //   mq700: {
+    //     raw: 'screen and (max-width: 700px)',
+    //   },
+    //   mq450: {
+    //     raw: 'screen and (max-width: 450px)',
+    //   },
+    // },
   },
-  plugins: [],
-}
+  corePlugins: {
+    preflight: false,
+  },
+};

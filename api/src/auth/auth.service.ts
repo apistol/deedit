@@ -1,51 +1,52 @@
-import { Injectable } from '@nestjs/common';
-import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
-import { User } from './auth.schema';
-import { UserDto } from './signin-user.dto';
+import { Injectable, UnauthorizedException } from '@nestjs/common'
+import { InjectModel } from '@nestjs/mongoose'
+import { Model } from 'mongoose'
+import { User } from './auth.schema'
+import * as bcrypt from 'bcryptjs'
+import { JwtService } from '@nestjs/jwt'
+import { LoginDto, SignUpDto } from './signin-user.dto'
 
 @Injectable()
 export class AuthService {
-  constructor(@InjectModel(User.name) private userModel: Model<User>) {}
+  constructor(
+    @InjectModel(User.name)
+    private userModel: Model<User>,
+    private jwtService: JwtService,
+  ) {}
 
-  async signin(userDto: UserDto): Promise<any> {
-    // Verify if user exists in the DB based on your logic
+  async signUp(signUpDto: SignUpDto): Promise<{ token: string }> {
+    const { name, email, password } = signUpDto
 
-    const userExists = await this.userModel.findOne(
-        { phone: userDto.phone, password: userDto.password },
-        {},
-        {}, // Return the updated document
-    );
+    const hashedPassword = await bcrypt.hash(password, 10)
 
-    if(!userExists){
-      throw new Error('User not found');
-    }
+    const user = await this.userModel.create({
+      name,
+      email,
+      password: hashedPassword,
+    })
 
-    // TODO jsonwebtoken
+    const token = this.jwtService.sign({ id: user.id })
 
-    // For example, check the password, create JWT token, etc.
-
-    return {
-      success:userExists.username,
-    };
+    return { token }
   }
 
+  async login(loginDto: LoginDto): Promise<{ token: string }> {
+    const { email, password } = loginDto
 
-  async signup(userDto: UserDto): Promise<any> {
+    const user = await this.userModel.findOne({ email })
 
-    const exists = await this.userModel.exists({ username: userDto.username });
-    if (exists) {
-      // Handle case where user doesn't exist
-      throw new Error('User user already exists');
+    if (!user) {
+      throw new UnauthorizedException('Invalid email or password')
     }
 
-    const user = new this.userModel(userDto).save();
+    const isPasswordMatched = await bcrypt.compare(password, user.password)
 
-    console.log('User signed in: ' + JSON.stringify(user));
-    return {
-      success: userDto.username,
-      jwt: ""
-    }; // Return the User instance, not userDto
+    if (!isPasswordMatched) {
+      throw new UnauthorizedException('Invalid email or password')
+    }
+
+    const token = this.jwtService.sign({ id: user._id })
+
+    return { token }
   }
-
 }
