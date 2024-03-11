@@ -33,10 +33,13 @@ body {
   }
 }
 
-.animate-fadeIn {
-  animation: fadeIn 0.7s forwards;
+.fadeIn {
+  animation: fadeIn 700ms forwards;
 }
 
-.animate-fadeOut {
-  animation: fadeOut 0.7s forwards;
+.fadeOut {
+  animation: fadeOut 700ms forwards;
+}
+
+body {
 }
