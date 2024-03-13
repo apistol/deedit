@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
+import Navigation from '../components/Navigation';
 
 const inter = Inter({
   subsets: ['latin'],

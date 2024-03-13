@@ -1,12 +1,12 @@
 'use client';
 import type { NextPage } from 'next';
-import NavigationHome from '../components/home-page/navigation-home';
-import FrameComponent from '../components/home-page/frame-component';
+import Navigation from '../components/Navigation';
 import { useEffect, useState } from 'react';
 import WelcomeAnimation from '../components/home-page/welcome-animation';
-import PostareTip from '../components/home-page/postare-tip';
+import Post from '../components/Post';
+import BannerHome from '../components/BannerHome';
 
-const Categorii: NextPage = () => {
+const HomePage: NextPage = () => {
   const [showAnimation, setShowAnimation] = useState(false);
   const [showMainContent, setShowMainContent] = useState(false);
 
@@ -30,16 +30,16 @@ const Categorii: NextPage = () => {
       <WelcomeAnimation showAnimation={showAnimation} />
       {showMainContent && (
         <div className="w-full bg-black flex flex-col justify-center items-center">
-          <div className="flex flex-col w-full h-screen">
-            <NavigationHome />
-            <FrameComponent />
+          <Navigation />
+          <div className="flex flex-col w-full">
+            <BannerHome textPrimary="povesti&" textSecondary="secrete" />
           </div>
-          <PostareTip />
-          <PostareTip />
+          <Post />
+          <Post />
         </div>
       )}
     </>
   );
 };
 
-export default Categorii;
+export default HomePage;

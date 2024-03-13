@@ -20,6 +20,9 @@ module.exports = {
         fadeIn: 'fadeIn 0.4s ease-out forwards',
         fadeOut: 'fadeOut 0.7s ease-out forwards',
       },
+      height: {
+        'screen-85': '85vh',
+      },
       colors: {
         black: '#000',
         antiquewhite: {
