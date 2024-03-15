@@ -5,10 +5,14 @@
 body {
   @apply leading-[normal] m-0;
 }
-*,
+/* *,
 ::before,
 ::after {
   border-width: 0;
+} */
+
+body {
+  background-color: black;
 }
 
 .max-font-120px {
@@ -39,4 +43,18 @@ body {
 
 .fadeOut {
   animation: fadeOut 700ms forwards;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  overflow-y: scroll;
+}
+
+.borderandu {
+  border: 2px;
+  border-color: brown;
 }
