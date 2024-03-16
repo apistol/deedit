@@ -1,15 +1,28 @@
-# Stage 1: Build the application
-FROM node:18 AS builder
+FROM node:alpine AS development
 WORKDIR /usr/src/app
-COPY package*.json ./
-RUN npm install
-COPY . .
-RUN npm run build
+COPY package.json ./
+COPY pnpm-lock.yaml ./
 
-# Stage 2: Run the application
-FROM node:18
+RUN npm install -g pnpm
+RUN pnpm install
+
+COPY . .
+RUN pnpm run build
+
+
+FROM node:alpine as production
+ARG NODE_ENV=production
+ENV NODE_ENV=${NODE_ENV}
+
 WORKDIR /usr/src/app
-COPY --from=builder /usr/src/app/dist ./dist
-COPY --from=builder /usr/src/app/node_modules ./node_modules
-EXPOSE 3000
-CMD ["node", "dist/main"]
+COPY package.json ./
+COPY pnpm-lock.yaml ./
+
+RUN npm install -g pnpm
+RUN pnpm install --production
+
+COPY --from=development /usr/src/appdist ./dist
+CMD ["node", "dist/apps/reservations/main"]
+
+
+
