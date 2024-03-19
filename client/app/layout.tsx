@@ -1,3 +1,4 @@
+import { ClerkProvider } from '@clerk/nextjs';
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
@@ -26,10 +27,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <body>
-        <main>{children}</main>
-      </body>
-    </html>
+    <>
+      <ClerkProvider>
+        <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
+          <body>
+            <main>{children}</main>
+          </body>
+        </html>
+      </ClerkProvider>
+    </>
   );
 }

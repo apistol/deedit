@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import WelcomeAnimation from '../components/home-page/welcome-animation';
 import Post from '../components/Post';
 import BannerHome from '../components/BannerHome';
+import { UserButton } from '@clerk/nextjs';
 
 const HomePage: NextPage = () => {
   const [showAnimation, setShowAnimation] = useState(false);
