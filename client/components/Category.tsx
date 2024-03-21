@@ -4,13 +4,12 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-const Navigation: NextPage = () => {
+const Category: NextPage = () => {
   const pathname = usePathname();
 
   return (
-    <div className="w-full flex justify-between items-center pt-20 bg-black">
-      <div></div>
-      <nav className="w-[450px] rounded-61xl bg-gray shadow-[0px_12px_20px_rgba(0,_0,_0,_0.04)] flex justify-between py-[5px] px-1 max-w-[95%] lg:max-w-full text-xl text-black font-inter">
+    <div className="w-full flex justify-center items-center pt-20 bg-black">
+      <nav className="w-[450px] rounded-61xl bg-gray-400 shadow-[0px_12px_20px_rgba(0,_0,_0,_0.04)] flex justify-between py-[5px] px-1 max-w-[95%] lg:max-w-full text-xl text-black font-inter">
         <Link href="/">
           <button
             className={`cursor-pointer py-[9px] px-4 ${pathname === '/' ? 'bg-firebrick' : 'bg-transparent'} rounded-29xl hover:bg-tomato`}
@@ -56,11 +55,8 @@ const Navigation: NextPage = () => {
           </button>
         </Link>
       </nav>
-      <div className="mr-8">
-        <UserButton afterSignOutUrl="/" />
-      </div>
     </div>
   );
 };
 
-export default Navigation;
+export default Category;

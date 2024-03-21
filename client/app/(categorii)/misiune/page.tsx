@@ -1,12 +1,12 @@
 import type { NextPage } from 'next';
 import BannerHome from '../../../components/BannerHome';
-import Navigation from '../../../components/Navigation';
+import Category from '../../../components/Category';
 
 const MisiunePage: NextPage = () => {
   return (
     <>
       <div className="w-full bg-black flex flex-col justify-center items-center">
-        <Navigation />
+        <Category />
         <div className="flex flex-col w-full">
           <BannerHome textPrimary="misiune&" textSecondary="valori" />
         </div>
