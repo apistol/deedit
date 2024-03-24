@@ -1,13 +1,11 @@
-FROM node:alpine AS development
+FROM node:14 AS development
 WORKDIR /usr/src/app
-COPY package.json ./
-COPY pnpm-lock.yaml ./
-
-RUN npm install -g pnpm
-RUN pnpm install
+COPY package*.json ./
+RUN npm install
+RUN npm install -g @nestjs/cli- .:/usr/src/app
 
 COPY . .
-RUN pnpm run build
+CMD [ "npm", "start" ]
 
 
 FROM node:alpine as production
