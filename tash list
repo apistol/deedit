@@ -1,0 +1,320 @@
+[33mcommit dcdcb28e1b391a15b792b6ef015d865ecaed2c8c[m[33m ([m[1;36mHEAD -> [m[1;32mfeatures/landing[m[33m)[m
+Author: luca1777 <luca.alexandru17@yahoo.com>
+Date:   Tue Mar 19 17:48:12 2024 +0200
+
+
+[33mcommit 62a0bc602906aaa00b0f8c6a542431f0cccb359c[m[33m ([m[1;31morigin/features/landing[m[33m)[m
+Author: luca1777 <luca.alexandru17@yahoo.com>
+Date:   Fri Mar 15 18:05:30 2024 +0200
+
+    added nested comments functionality
+
+[33mcommit 81bec934f8379f3033f42d233c6aba186fe1e9d0[m
+Author: luca1777 <luca.alexandru17@yahoo.com>
+Date:   Wed Mar 13 14:13:45 2024 +0200
+
+    implement ui category
+
+[33mcommit fb3dabdd1c5789d346b3345c1f413d6c0f85471f[m
+Author: luca1777 <luca.alexandru17@yahoo.com>
+Date:   Tue Mar 12 17:48:03 2024 +0200
+
+    make category ui
+
+[33mcommit 31307ac9810ea9d6f98d2a9049770f6c03b3b267[m
+Author: luca1777 <luca.alexandru17@yahoo.com>
+Date:   Mon Mar 11 17:05:17 2024 +0200
+
+    remove unused code
+
+[33mcommit 3a4d84ab08b26fe247b61c1af06bd844b75cd266[m
+Merge: e49bdaf ca00933
+Author: luca1777 <luca.alexandru17@yahoo.com>
+Date:   Mon Mar 11 16:58:31 2024 +0200
+
+    Merge branch 'features/landing' of https://github.com/apistol/deedit into features/landing
+
+[33mcommit e49bdaf4bfe532f9ebce64fcc38a1485e368048f[m
+Author: luca1777 <luca.alexandru17@yahoo.com>
+Date:   Mon Mar 11 16:40:10 2024 +0200
+
+    update
+
+[33mcommit ca009338521cb05acc5b4c9d4b1e76e421dd0326[m[33m ([m[1;31morigin/feature[m[33m)[m
+Author: luca1777 <luca.alexandru17@yahoo.com>
+Date:   Mon Mar 11 16:40:10 2024 +0200
+
+    add undesaved file
+
+[33mcommit 0f09fb20323041d184fc866b2de7caa76ba11ee2[m
+Author: luca1777 <luca.alexandru17@yahoo.com>
+Date:   Mon Mar 11 16:32:08 2024 +0200
+
+    added animation page and category ui
+
+[33mcommit 3ca6f92e4ff7eaa412112309b292008c92f00692[m
+Author: luca1777 <luca.alexandru17@yahoo.com>
+Date:   Fri Feb 23 15:25:00 2024 +0200
+
+    set login auth in nest and jwt-guard
+
+[33mcommit b8d5f30cadf57c329e5bc8813e92aee376dd8152[m
+Author: luca1777 <luca.alexandru17@yahoo.com>
+Date:   Fri Feb 23 15:23:14 2024 +0200
+
+    set login page
+
+[33mcommit 30d37d726dc01ad7109a9dc6d5604f7b7a143686[m
+Author: luca1777 <luca.alexandru17@yahoo.com>
+Date:   Thu Feb 22 14:33:05 2024 +0200
+
+    implement signup register logic
+
+[33mcommit 0f632f6346464a4ab21843c57823264a431de965[m
+Author: luca1777 <luca.alexandru17@yahoo.com>
+Date:   Thu Feb 22 09:32:59 2024 +0200
+
+    added signup ui
+
+[33mcommit f937036d0d06bc4f2f1827789f9e2df129e3e533[m
+Author: luca1777 <luca.alexandru17@yahoo.com>
+Date:   Wed Feb 21 11:06:14 2024 +0200
+
+    fix prettier
+
+[33mcommit 86d28f9f30c01429d2cd8dcfc4ea47d5d06c2b93[m[33m ([m[1;32mmain[m[33m)[m
+Author: luca1777 <luca.alexandru17@yahoo.com>
+Date:   Wed Feb 21 09:34:49 2024 +0200
+
+    implement nest jwt
+
+[33mcommit 54358908de8669682db5ce65162ccf9ce21c6d79[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: AlexRPADev <66978272+AIPitton@users.noreply.github.com>
+Date:   Thu Nov 30 22:36:33 2023 +0200
+
+    navbar posts-FlatList
+
+[33mcommit e4a8372752c4b9d9653542a506255c1f0196cfa0[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Thu Nov 30 14:14:06 2023 +0200
+
+    make routes
+
+[33mcommit 44fd03c23ad132531b903c34dc2c4a87a7c5c443[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Wed Nov 29 13:40:31 2023 +0200
+
+    home page and subs changes
+
+[33mcommit fbbc92518858b1d6ded6bc1d6682419829c8a230[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Tue Nov 28 17:04:28 2023 +0200
+
+    nx changes
+
+[33mcommit 646bfcaa719fab4cb145d9a84c715ea4da0759bd[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Tue Nov 28 17:02:19 2023 +0200
+
+    refactor client
+
+[33mcommit a22d63e78bc21ac293bc411623d5bbbf7b05efd4[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Tue Nov 28 14:54:24 2023 +0200
+
+    nx changes
+
+[33mcommit 82a72cd9323c9ad39b08f64c3e52c72d0b81d9e4[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Tue Nov 28 12:50:16 2023 +0200
+
+    added votes endpoint
+
+[33mcommit 271658a562d9ef37010bf9b2f5082bda5c23ec40[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Mon Nov 27 16:52:40 2023 +0200
+
+    Implement posts, commnets, and votes modules
+
+[33mcommit 2734272c0e6237c132f79fe00b24d74180ae42d6[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Mon Nov 27 03:01:31 2023 +0200
+
+    fix deploy
+
+[33mcommit 8af7be5385742d932b368dd1a66cdac0ac4f4f6a[m
+Author: AlexRPADev <66978272+AIPitton@users.noreply.github.com>
+Date:   Fri Nov 24 21:24:10 2023 +0200
+
+    nxMP
+
+[33mcommit b67c722b38acd994249efd62e1a933dc30cb4a61[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Fri Nov 24 12:49:39 2023 +0200
+
+    setup nx
+
+[33mcommit e0547bf58b43bd04b06eb74113c5be149f22924c[m
+Merge: 254ced8 d283176
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Thu Nov 23 17:03:07 2023 +0200
+
+    Merge remote-tracking branch 'origin/main'
+
+[33mcommit 254ced847f1585da7e57647be744c3b20855e1a3[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Thu Nov 23 17:02:53 2023 +0200
+
+    changes to login and signup
+
+[33mcommit d283176554da36ad32b5ba641d9898ce1b470fbe[m
+Author: AlexRPADev <66978272+AIPitton@users.noreply.github.com>
+Date:   Wed Nov 22 19:18:38 2023 +0200
+
+    NavReduxTw
+
+[33mcommit f8690cb586dc57f76c447013e6524c60d06eac42[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Wed Nov 22 11:24:35 2023 +0200
+
+    update home module
+
+[33mcommit 7e9c4c3a59d5816df50d27287889da2b0880e66e[m
+Merge: 925b93d 6a84ffd
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Wed Nov 22 08:58:28 2023 +0200
+
+    Merge remote-tracking branch 'origin/main'
+    
+    # Conflicts:
+    #       .idea/vcs.xml
+    #       api/.dockerignore
+    #       api/Dockerfile
+    #       api/fly.toml
+
+[33mcommit 925b93dae66dd4297ac1d4a813c4b0182efcd873[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Wed Nov 22 08:58:08 2023 +0200
+
+    update task model
+
+[33mcommit 71699b3a980a75a0669100e124c0d004791e00af[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Wed Nov 22 08:57:40 2023 +0200
+
+    update task model
+
+[33mcommit 6a84ffdc90395b8b4aa276c884b6c823f40082ac[m
+Author: alexp <apistol5395@gmail.com>
+Date:   Wed Nov 22 08:56:43 2023 +0200
+
+    update doccker file
+
+[33mcommit cf5a1b92b6da584e212331871dbfa5baeaac2e27[m
+Author: alexp <apistol5395@gmail.com>
+Date:   Wed Nov 22 08:55:56 2023 +0200
+
+    update doccker file
+
+[33mcommit 8bfe3100341061895882d32098644411385768e1[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Wed Nov 22 07:46:32 2023 +0200
+
+    update api
+
+[33mcommit b0eace0329d77eaf877354fa95c43352cb8eca87[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Tue Nov 21 12:26:32 2023 +0200
+
+    intial setup
+
+[33mcommit e323d82f6decdb322097dea7d86f104086271d2f[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Tue Nov 21 03:28:15 2023 +0200
+
+    setup register page
+
+[33mcommit f2aaf19f42360174449d5c8090131245aa22ae15[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Mon Nov 20 19:58:42 2023 +0200
+
+    setup register page
+
+[33mcommit ef59d3d17419fbade47aad84ea2e6443f041c56f[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Mon Nov 20 17:31:57 2023 +0200
+
+    setup register page
+
+[33mcommit 4473a969a81bf19daa4981f6b12f1eec96e5dcd8[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Mon Nov 20 17:13:12 2023 +0200
+
+    setup client
+
+[33mcommit 82edea04e389f0ff020c0581ef75a17fd31220e4[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Mon Nov 20 16:07:04 2023 +0200
+
+    setup client
+
+[33mcommit fe72e29c264764e95d965d49477e561cb0184a07[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Mon Nov 20 02:44:08 2023 +0200
+
+    fix deploy
+
+[33mcommit fa0d9214edcbdd2cc805165a7679262d33c5d090[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Mon Nov 20 00:54:57 2023 +0200
+
+    fix deploy
+
+[33mcommit 10faeacedcbf1d5b9bd070618ef05bd6bd44e76a[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Mon Nov 20 00:42:07 2023 +0200
+
+    setup login and register path
+
+[33mcommit 6fdaa8292072963aa58dbac076bb0d08e871f078[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Sun Nov 19 02:05:47 2023 +0200
+
+    connect to mongodb
+
+[33mcommit 81bdde6f0d920a791d9d0622436d218bee9dacc7[m
+Merge: 340d01b 4420f40
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Sun Nov 19 01:34:39 2023 +0200
+
+    Merge remote-tracking branch 'origin/main'
+
+[33mcommit 340d01b997f1b8156d74007e1eee8d37c2370873[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Sun Nov 19 01:34:24 2023 +0200
+
+    setup backend
+
+[33mcommit 4420f400e50153effb0c2572b630d75ec229d40f[m
+Author: AlexRPADev <66978272+AIPitton@users.noreply.github.com>
+Date:   Fri Nov 17 08:18:55 2023 +0200
+
+    helloWorld
+
+[33mcommit 0da7349d4fc48882349c762271de346328f41cb9[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Thu Nov 16 12:56:40 2023 +0200
+
+    projects setup
+
+[33mcommit 07d51ab6c934c2578631295f3b72d7907c5147b8[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Thu Nov 16 12:54:52 2023 +0200
+
+    setup
+
+[33mcommit f0681b17c9bf7a41c2ee49f44e29818bfd7696b1[m
+Author: alexp <alexandrupi@payoneer.com>
+Date:   Thu Nov 16 12:50:55 2023 +0200
+
+    initial commit
