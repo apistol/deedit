@@ -5,10 +5,20 @@ import WelcomeAnimation from '../components/home-page/welcome-animation';
 import Post from '../components/Post';
 import BannerHome from '../components/BannerHome';
 import Category from '../components/Category';
+import { getPosts } from '../utils/utils';
 
 const HomePage: NextPage = () => {
   const [showAnimation, setShowAnimation] = useState(false);
   const [showMainContent, setShowMainContent] = useState(false);
+
+  useEffect(() => {
+    const posts = async () => {
+      const resData = await getPosts();
+
+      console.log('Posts:', resData.data);
+    };
+    posts();
+  }, []);
 
   useEffect(() => {
     const isVisited = localStorage.getItem('isVisited');
