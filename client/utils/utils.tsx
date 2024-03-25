@@ -25,3 +25,15 @@ export const login = async (loginData) => {
     console.error('Registration error:', error.response?.data || error.message);
   }
 };
+
+export const getPosts = async () => {
+  try {
+    const endpointPosts = 'http://localhost:3000/posts';
+
+    const resData = await axios.get(endpointPosts);
+
+    return resData;
+  } catch (error) {
+    console.error('Registration error:', error.response?.data || error.message);
+  }
+};
