@@ -1,8 +1,8 @@
-import { NestFactory } from '@nestjs/core';
-import { PostsModule } from './posts.module';
+import { NestFactory } from '@nestjs/core'
+import { PostsModule } from './posts.module'
 
 async function bootstrap() {
-  const app = await NestFactory.create(PostsModule, {cors: true});
-  await app.listen(3000);
+  const app = await NestFactory.create(PostsModule, { cors: true })
+  await app.listen(3000)
 }
-bootstrap();
+bootstrap()

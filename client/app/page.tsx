@@ -1,24 +1,18 @@
 'use client';
 import type { NextPage } from 'next';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import WelcomeAnimation from '../components/home-page/welcome-animation';
 import Post from '../components/Post';
 import BannerHome from '../components/BannerHome';
 import Category from '../components/Category';
-import { getPosts } from '../utils/utils';
+import { PostsContext } from '../context/posts';
 
 const HomePage: NextPage = () => {
   const [showAnimation, setShowAnimation] = useState(false);
   const [showMainContent, setShowMainContent] = useState(false);
-  //  TODO read from context
-  //  const posts = useContext(PostsContext);
+  const { posts } = useContext(PostsContext);
 
-  useEffect(() => {
-    const posts = async () => {
-      await getPosts();
-    };
-    posts();
-  }, []);
+  console.log('Astea sunt postarile', posts);
 
   useEffect(() => {
     const isVisited = localStorage.getItem('isVisited');
@@ -44,8 +38,9 @@ const HomePage: NextPage = () => {
           <div className="flex flex-col w-full">
             <BannerHome textPrimary="povesti&" textSecondary="secrete" />
           </div>
-          <Post />
-          <Post />
+          {posts.map((post) => (
+            <Post key={post._id} post={post} />
+          ))}
         </div>
       )}
     </>

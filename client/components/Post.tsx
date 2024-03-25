@@ -9,9 +9,16 @@ import Link from 'next/link';
 import { useState } from 'react';
 import ShareModal from './ShareModal';
 
-const Post: NextPage = () => {
+interface PostProps {
+  post: {
+    _id: string;
+    title: string;
+    content: string;
+  };
+}
+
+const Post: React.FC<PostProps> = ({ post }) => {
   const [isShareOpen, setIsShareOpen] = useState(false);
-  console.log(isShareOpen);
 
   const closeModal = () => {
     setIsShareOpen(false);
@@ -31,7 +38,7 @@ const Post: NextPage = () => {
                   <UpArrow />
                 </div>
                 <div className="self-stretch h-[45.5px] relative font-extrabold flex items-center justify-center shrink-0 mq950:text-5xl mq450:text-lg">
-                  23
+                  70
                 </div>
                 <div className="flex flex-row items-start justify-start py-0 pr-[22px] pl-[22.199999999999815px]">
                   <DownArrow />

@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import Topbar from '../components/shared/Topbar';
 import LeftSidebar from '../components/shared/LeftSidebar';
 import Bottombar from '../components/shared/Bottombar';
+import { PostsProvider } from '../context/posts';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,8 +19,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-      <html lang="en">
-        <body className={inter.className}>
+    <html lang="en">
+      <body className={inter.className}>
+        <PostsProvider>
           <Topbar />
           <main className="flex flex-row">
             <LeftSidebar />
@@ -28,7 +30,8 @@ export default function RootLayout({
             </section>
           </main>
           <Bottombar />
-        </body>
-      </html>
+        </PostsProvider>
+      </body>
+    </html>
   );
 }
