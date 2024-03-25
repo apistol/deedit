@@ -29,10 +29,7 @@ export const login = async (loginData) => {
 export const getPosts = async () => {
   try {
     const endpointPosts = 'http://localhost:3000/posts';
-
     const resData = await axios.get(endpointPosts);
-
-    // TODO aici le salvezi in context
 
     return resData;
   } catch (error) {

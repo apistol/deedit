@@ -10,14 +10,24 @@ import { useState } from 'react';
 import ShareModal from './ShareModal';
 
 interface PostProps {
-  post: {
-    _id: string;
-    title: string;
-    content: string;
-  };
+    post: {
+      _id: string;
+      title: string;
+      identifier: string,
+      slug: string,
+      sub: string,
+      body: string,
+      subName: string,
+      username: string,
+      user: string,
+      comments: string,
+      votes: string
+    };
 }
 
-const Post: React.FC<PostProps> = ({ post }) => {
+const Post: React.FC<PostProps> = ({post}) => {
+
+  const { body, title } = post;
   const [isShareOpen, setIsShareOpen] = useState(false);
 
   const closeModal = () => {
@@ -30,7 +40,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
         <div className="w-full flex flex-col items-start justify-start gap-[10px_0px] shrink-0 mb-6">
           <div className="flex flex-row justify-between flex-wrap items-center gap-[0px_9px] max-w-full w-full">
             <h1 className="flex-1 relative text-2xl lg:text-4xl font-black font-inherit inline-block max-w-full">
-              Am baut la liceu si am vomitat in cancelarie
+              {title}
             </h1>
             <div className="w-[80.3px] flex flex-col items-start justify-start pt-2.5 px-0 pb-0 box-border text-center text-11xl">
               <div className="self-stretch flex flex-col items-start justify-start gap-[22.75px_0px]">
@@ -47,15 +57,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
             </div>
           </div>
           <div className="max-w-[1087px] relative text-lg font-medium inline-block shrink-0 mt-2">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum...
+            {body}
           </div>
         </div>
       </Link>

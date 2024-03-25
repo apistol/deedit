@@ -58,6 +58,7 @@ const CommentComponent = () => {
     });
   };
 
+
   return (
     <div className="w-full flex flex-col justify-center items-center gap-8">
       <CommentInput addComment={addComment} />

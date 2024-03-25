@@ -10,9 +10,9 @@ import { PostsContext } from '../context/posts';
 const HomePage: NextPage = () => {
   const [showAnimation, setShowAnimation] = useState(false);
   const [showMainContent, setShowMainContent] = useState(false);
-  const { posts } = useContext(PostsContext);
+  const postsContext = useContext(PostsContext);
+  const {posts} = postsContext;
 
-  console.log('Astea sunt postarile', posts);
 
   useEffect(() => {
     const isVisited = localStorage.getItem('isVisited');
@@ -38,7 +38,7 @@ const HomePage: NextPage = () => {
           <div className="flex flex-col w-full">
             <BannerHome textPrimary="povesti&" textSecondary="secrete" />
           </div>
-          {posts.map((post) => (
+          {posts?.map((post) => (
             <Post key={post._id} post={post} />
           ))}
         </div>

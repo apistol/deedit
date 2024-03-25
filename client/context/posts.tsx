@@ -5,6 +5,7 @@ import { getPosts } from '../utils/utils';
 export const PostsContext = createContext(null);
 
 export function PostsProvider({ children }) {
+
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
