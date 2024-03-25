@@ -1,4 +1,3 @@
-import { SignedIn, SignOutButton, UserButton } from '@clerk/nextjs';
 import Link from 'next/link';
 import React from 'react';
 import LogoutImg from '../../public/assets/logout.svg';
@@ -12,16 +11,9 @@ const Topbar = () => {
       </Link>
       <div className="flex items-center gap-6 md:gap-0">
         <div className="">
-          <UserButton afterSignOutUrl="/" />
         </div>
         <div className="block md:hidden">
-          <SignedIn>
-            <SignOutButton>
-              <div className="flex cursor-pointer">
-                <Image src={LogoutImg} alt="logout" width={24} height={24} />
-              </div>
-            </SignOutButton>
-          </SignedIn>
+
         </div>
       </div>
     </nav>

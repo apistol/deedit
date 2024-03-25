@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import WelcomeAnimation from '../components/home-page/welcome-animation';
 import Post from '../components/Post';
 import BannerHome from '../components/BannerHome';
-import { UserButton } from '@clerk/nextjs';
 import Category from '../components/Category';
 
 const HomePage: NextPage = () => {
