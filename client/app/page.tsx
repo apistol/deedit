@@ -10,12 +10,12 @@ import { getPosts } from '../utils/utils';
 const HomePage: NextPage = () => {
   const [showAnimation, setShowAnimation] = useState(false);
   const [showMainContent, setShowMainContent] = useState(false);
+  //  TODO read from context
+  //  const posts = useContext(PostsContext);
 
   useEffect(() => {
     const posts = async () => {
-      const resData = await getPosts();
-
-      console.log('Posts:', resData.data);
+      await getPosts();
     };
     posts();
   }, []);

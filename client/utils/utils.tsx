@@ -32,6 +32,8 @@ export const getPosts = async () => {
 
     const resData = await axios.get(endpointPosts);
 
+    // TODO aici le salvezi in context
+
     return resData;
   } catch (error) {
     console.error('Registration error:', error.response?.data || error.message);
