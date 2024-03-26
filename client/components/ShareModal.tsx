@@ -13,7 +13,7 @@ import {
   FacebookMessengerIcon,
 } from 'next-share';
 
-const ShareModal = ({ closeModal }) => {
+const ShareModal = ({ closeModal, title }) => {
   return (
     <div className="flex justify-center items-center z-20 fixed inset-0">
       <div className="fixed inset-0 bg-black/30 opacity-100 backdrop-blur-[.5px]"></div>
@@ -42,12 +42,7 @@ const ShareModal = ({ closeModal }) => {
             </TelegramShareButton>
           </div>
           <div>
-            <TwitterShareButton
-              url={'https://github.com/next-share'}
-              title={
-                'next-share is a social share buttons for your next React apps.'
-              }
-            >
+            <TwitterShareButton url={'http://localhost:3001/'} title={title}>
               <TwitterIcon size={32} round />
             </TwitterShareButton>
           </div>

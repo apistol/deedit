@@ -1,5 +1,4 @@
 import React from 'react';
-import { FacebookShareButton, FacebookIcon } from 'next-share';
 
 const ShareIcon = ({ color }) => {
   return (
